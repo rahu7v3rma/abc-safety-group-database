@@ -1,0 +1,70 @@
+Quiz Document 
+
+form content quiz
+{
+    "form_id": str,
+    "passing_points": int,
+    "questions": [{
+        "question_id": str,
+        "question_number": int,
+        "description": str,
+        "point_value": int,
+        "answer_type": str,
+        "active": bool,
+        "choices": [{ // if multiple choice
+            "answer_id": str,
+            "description": str,
+            "choice_position": int,
+            "active": bool,
+            "is_correct": bool // not optional if multiple choice
+        }]
+    }]
+}
+
+form submission quiz
+{
+    "response_id": str,
+    "form_id": str,
+    "form_type": str,
+    "user_id": str,
+    "answers": [{
+        "question_id": str,
+        "answer_id": str, // if multiple choice
+        "description": str, // if multiple choice
+        "response": str // if short answer
+    }]
+}
+
+Survey Document
+form content survey
+{
+    "form_id": str,
+    "active": bool,
+    "questions": [{
+        "question_id": str,
+        "question_number": int,
+        "description": str,
+        "answer_type": str, // multipleChoice, shortAnswer
+        "active": bool,
+        "choices": [{ // if multiple choice
+            "answer_id": str,
+            "description": str,
+            "choice_position": int,
+            "active": bool,
+        }]
+    }]
+}
+
+form submission survey
+{
+    "response_id": str,
+    "form_id": str,
+    "form_type": str,
+    "user_id": str,
+    "answers": [{
+        "question_id": str,
+        "answer_id": str, // if multiple choice
+        "description": str, // if multiple choice
+        "response": str // if short answer
+    }]
+}
